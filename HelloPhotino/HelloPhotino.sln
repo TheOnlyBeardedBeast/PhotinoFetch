@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloPhotino", "HelloPhotino\HelloPhotino.csproj", "{E7CE2030-D866-4FAE-BEB0-12BE736D28E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Photino.Access", "Photino.GraphQL\Photino.Access.csproj", "{75790058-CC5C-4CD1-A035-0323F8F5FBE6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Photino.Access", "Photino.Access\Photino.Access.csproj", "{75790058-CC5C-4CD1-A035-0323F8F5FBE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

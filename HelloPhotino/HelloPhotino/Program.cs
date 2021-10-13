@@ -15,7 +15,8 @@ namespace HelloPhotinoApp
         public string Hello() => "World!";
     }
 
-    public interface IDataResult : IExecutionResult {
+    public interface IDataResult : IExecutionResult
+    {
         public object Data { get; }
     }
 
@@ -41,48 +42,19 @@ namespace HelloPhotinoApp
             var window = new PhotinoWindow()
                 .SetTitle(windowTitle)
                 .SetDevToolsEnabled(true)
-                //.SetChromeless(true)
-                // Resize to a percentage of the main monitor work area
+                // .SetChromeless(true)
                 .SetUseOsDefaultSize(false)
                 .SetSize(new Size(600, 400))
-                // Center window in the middle of the screen
                 .Center()
-                // Users can resize windows by default.
-                // Let's make this one fixed instead.
                 .SetResizable(true)
-                //.RegisterCustomSchemeHandler("app", (object sender, string scheme, string url, out string contentType) =>
-                //{
-                //    contentType = "text/javascript";
-                //    return new MemoryStream(Encoding.UTF8.GetBytes(@"
-                //        (() =>{
-                //            window.setTimeout(() => {
-                //                alert(`🎉 Dynamically inserted JavaScript.`);
-                //            }, 1000);
-                //        })();
-                //    "));
-                //})
-                // Most event handlers can be registered after the
-                // PhotinoWindow was instantiated by calling a registration 
-                // method like the following RegisterWebMessageReceivedHandler.
-                // This could be added in the PhotinoWindowOptions if preferred.
-                .RegisterWebMessageReceivedHandler(async (object sender, string message) =>
+                .UsePhotinoFetch(async (object sender, PhotinoGraphqlBody data) =>
                 {
-                    var window = (PhotinoWindow)sender;
+                    var response = await executor.ExecuteAsync(data.Query, data.Variables);
 
-                    var req = System.Text.Json.JsonSerializer.Deserialize<PhotinoGraphqlRequest>(message);
-
-                    // The message argument is coming in from sendMessage.
-                    // "window.external.sendMessage(message: string)"
-                    var response = await executor.ExecuteAsync(req.Body.Query,req.Body.Variables);
-
-                    PhotinoResponse resp = new() { Id = req.Id, Body = (response as IReadOnlyQueryResult).Data };
-
-                    // Send a message back the to JavaScript event handler.
-                    // "window.external.receiveMessage(callback: Function)"
-                    window.SendWebMessage(System.Text.Json.JsonSerializer.Serialize(resp));
+                    return new PhotinoHandlerResponse { Data = (response as IReadOnlyQueryResult).Data, Error = null };
                 })
                  .Load(new Uri("http://localhost:3000/"));
-                //.Load("wwwroot/index.html"); // Can be used with relative path strings or "new URI()" instance to load a website.
+            //.Load("wwwroot/index.html"); // Can be used with relative path strings or "new URI()" instance to load a website.
 
             window.WaitForClose(); // Starts the application event loop
         }

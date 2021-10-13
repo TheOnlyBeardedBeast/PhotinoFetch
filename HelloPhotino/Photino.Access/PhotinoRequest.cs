@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 namespace Photino.Access
 {
     public class PhotinoRequest<T>

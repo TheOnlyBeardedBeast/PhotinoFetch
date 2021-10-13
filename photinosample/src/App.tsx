@@ -1,17 +1,17 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { useState } from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 import { PhotinoClient } from "../../photinoex/src/index";
 
 const client = new PhotinoClient();
 
 function App() {
-
   const handleClick = async () => {
+    console.log(Date.now(), "Query started");
     const response = await client.query({ Query: "query{ hello }" });
-    console.log(Math.random() * 10, response);
-  }
+    console.log(Date.now(), response);
+  };
 
   return (
     <div className="App">
@@ -35,7 +35,7 @@ function App() {
           >
             Learn React
           </a>
-          {' | '}
+          {" | "}
           <a
             className="App-link"
             href="https://vitejs.dev/guide/features.html"
@@ -47,7 +47,7 @@ function App() {
         </p>
       </header>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,5 +1,5 @@
 ﻿
-namespace Photino.Access
+namespace Photino.Fetch
 {
     public class PhotinoRequest<T>
     {

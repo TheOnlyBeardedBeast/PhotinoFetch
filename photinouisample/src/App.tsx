@@ -1,8 +1,7 @@
-import { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
-import { PhotinoClient } from "../../photinoex/src/index";
+import { PhotinoClient } from "photino-fetch";
 
 const client = new PhotinoClient();
 

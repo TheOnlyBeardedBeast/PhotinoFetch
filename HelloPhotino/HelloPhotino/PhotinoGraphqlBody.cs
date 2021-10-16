@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Photino.Access
+namespace HelloPhotinoApp
 {
     public class PhotinoGraphqlBody
     {

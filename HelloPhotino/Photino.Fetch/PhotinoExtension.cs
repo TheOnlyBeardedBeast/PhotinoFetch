@@ -2,7 +2,7 @@ using PhotinoNET;
 using System;
 using System.Threading.Tasks;
 
-namespace Photino.Access
+namespace Photino.Fetch
 {
     public static class PhotinoExtension
     {

@@ -13,13 +13,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Photino.Access\Photino.Access.csproj" />
+    <None Update="wwwroot\**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None> 
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="wwwroot\**">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <ProjectReference Include="..\Photino.Fetch\Photino.Fetch.csproj" />
   </ItemGroup>
-
 </Project>

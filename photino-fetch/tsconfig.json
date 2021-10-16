@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "es6",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "outDir": ".",
+    "preserveConstEnums": true,
+    "target": "es5",
+    "lib": ["DOM", "ESNext"],
+    "declaration": true
+  },
+  "exclude": ["node_modules"]
+}

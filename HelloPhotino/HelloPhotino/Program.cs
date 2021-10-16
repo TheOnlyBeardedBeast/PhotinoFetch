@@ -1,12 +1,10 @@
 ﻿using HotChocolate;
 using HotChocolate.Execution;
 using Microsoft.Extensions.DependencyInjection;
-using Photino.Access;
+using Photino.Fetch;
 using PhotinoNET;
 using System;
 using System.Drawing;
-using System.IO;
-using System.Text;
 
 namespace HelloPhotinoApp
 {
@@ -53,8 +51,8 @@ namespace HelloPhotinoApp
 
                     return new PhotinoHandlerResponse { Data = (response as IReadOnlyQueryResult).Data, Error = null };
                 })
-                 .Load(new Uri("http://localhost:3000/"));
-            //.Load("wwwroot/index.html"); // Can be used with relative path strings or "new URI()" instance to load a website.
+                 .Load(new Uri("http://localhost:3000/")); // for development
+                 // .Load("wwwroot/index.html"); // Can be used with relative path strings or "new URI()" instance to load a website.
 
             window.WaitForClose(); // Starts the application event loop
         }

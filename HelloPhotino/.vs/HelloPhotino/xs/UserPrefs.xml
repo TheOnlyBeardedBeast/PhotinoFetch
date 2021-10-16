@@ -1,0 +1,35 @@
+﻿<Properties StartupConfiguration="{E7CE2030-D866-4FAE-BEB0-12BE736D28E3}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="HelloPhotino/wwwroot/index.html">
+    <Files>
+      <File FileName="HelloPhotino/Program.cs" Line="54" Column="81" />
+      <File FileName="HelloPhotino/HelloPhotino.csproj" Line="18" Column="12" />
+      <File FileName="HelloPhotino/wwwroot/index.html" Line="5" Column="49" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="HelloPhotino" expanded="True">
+            <Node name="HelloPhotino" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="wwwroot" expanded="True">
+                <Node name="assets" expanded="True" />
+                <Node name="index.html" selected="True" />
+              </Node>
+            </Node>
+            <Node name="Photino.Fetch" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <DisabledProjects>
+    <String>Photino.Access/Photino.Fetch.csproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.HelloPhotino PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>
